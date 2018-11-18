@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400');
+
+:root {
+    --fg: #5A5B5C;
+    --bg: #F5F6F7;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    transition: background-color .333s;
+    background-color: var(--bg);
+    font-family: Lato, sans-serif;
+    color: var(--fg);
+}
+
+input,
+button,
+input:focus,
+button:focus {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    color: inherit;
+    font-family: Lato, sans-serif;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a,
+a:focus {
+    color: inherit;
+    outline: 0;
+}
+
+#clock {
+    display: block;
+    font-size: 6rem;
+    text-align: center;
+    letter-spacing: .05em;
+    cursor: pointer;
+}
+
+#am-pm {
+    font-size: .5em;
+}
+
+#search-form {
+    padding: 1em;
+    background-color: var(--bg);
+    transition: color .333s ease;
+    color: var(--fg);
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+#search-form>div {
+    width: 100%;
+}
+
+#search-input,
+#search-input:focus {
+    width: 100%;
+    margin-top: .16em;
+    font-size: 1.5em;
+    letter-spacing: .05em;
+}
+
+#search-suggestions {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 1.1em;
+}
+
+body.suggestions #search-suggestions {
+    display: flex;
+}
+
+.search-suggestion {
+    color: var(--fg);
+    padding: .7em 1em;
+    white-space: nowrap;
+    font-size: 1.6em;
+    cursor: pointer;
+}
+
+.search-suggestion.highlight {
+    background-color: var(--fg);
+    color: var(--bg);
+    transition: all .3333s;
+}
+
+.search-suggestion b {
+    position: relative;
+    font-weight: 400;
+}
+
+.search-suggestion b::after {
+    content: ' ';
+    position: absolute;
+    right: 0;
+    bottom: -.4em;
+    left: 0;
+    height: 3px;
+    background-color: var(--fg);
+    opacity: .3;
+}
+
+.search-suggestion.highlight b::after {
+    opacity: 0;
+}
+
+#help {
+    display: flex;
+    padding: 0;
+    background-color: var(--bg);
+    font-size: 1.3rem;
+    z-index: 1;
+}
+
+.command a {
+    display: block;
+    position: relative;
+    margin: 1em 0;
+    font-size: .9em;
+    line-height: 2em;
+    text-decoration: none;
+    background-color: var(--bg);
+    color: var(--fg);
+    transition: color .333s ease, background-color .333s ease;
+}
+
+.command-key {
+    display: block;
+    float: left;
+    width: 2.5em;
+    margin-right: 1em;
+    border-radius: 50%;
+    font-weight: 900;
+    color: #FFB643;
+    font-size: .8em;
+    text-align: center;
+}
+
+.command-name {
+    position: relative;
+    overflow: hidden;
+}
+
+.command a:hover {
+    background-color: var(--fg);
+    color: var(--bg);
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+body.help #help.overlay,
+body.form #search-form.overlay {
+    visibility: visible;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 300px) {
+    .category:nth-last-child(2) {
+        margin-bottom: 0;
+    }
+
+    #search-input,
+    #search-input:focus {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .category {
+        margin: 2rem 0;
+    }
+}

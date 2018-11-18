@@ -1,0 +1,125 @@
+/*
+Based upon the homepage made by Unix121 @ https://github.com/unix121.
+ */
+
+/* PREPROCESSING */
+@import url("../fonts/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Roboto:300|Roboto:400');
+html,
+body,	
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+pre,
+code {
+	font-family: FontAwesome;
+}
+
+/* VARIABLE DECLERATIONS */
+:root {
+	/* COLORS */
+	--bg: #f5f6f7;
+	--entry: #696970;
+	--grtn: #696970;
+	--hover: #FFB643;
+	--special: #FFB643;
+	/* MUTATORS */
+	--cursor: '_';
+	--hr: 0px;
+}
+
+/* TAG DECLERATIONS */
+
+body {
+	background-color: var(--bg);
+	font-family: FontAwesome;
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	display: block;
+	font-size: 14px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
+ul {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	width: 666px;
+}
+
+hr {
+	border: 0;
+	height: var(--hr);}
+
+li {
+	display: inline-flex;
+	margin: 6px;
+}
+
+a {
+	color: var(--entry);
+	text-decoration: none;
+	font-size: 64px;
+	transition: .333s;
+	line-height: 70px;
+}
+
+a:hover, a.hovered {
+	color: var(--hover);
+	transform: scale(1.075,1.075);
+}
+
+.greeting , .greeting:hover, .special-greeting{
+	color: var(--grtn);
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	height: 64px;
+}
+
+.special-greeting:hover {
+	color: var(--special)
+}
+
+.notblinking:after, .blinking:after {
+	color: var(--hover);
+	content: var(--cursor);
+	opacity: 1;
+	padding-left: 6px;
+}
+
+.blinking:after {
+	animation: blink 1s infinite;
+}
+
+@keyframes blink {
+		0% {opacity: 0}
+  	49%{opacity: 0}
+  	50% {opacity: 1}
+}
+
+.hidden {
+	display: none;
+}
+
+.sub {
+	color: var(--entry);
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	text-decoration: none;
+	transition: .333s;
+}
+
+.sub:hover {
+	color: var(--hover);
+}
