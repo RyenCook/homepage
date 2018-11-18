@@ -34,8 +34,8 @@ const CONFIG = [
                 url: "https://youtube.com/"
             }
         ],
-        icontype: "fab",
-        icon: "fa-google",
+        icontype: "fas",
+        icon: "fa-search",
         url: "https://duckduckgo.com/",
         query: "?q=",
         ph: "",
@@ -97,8 +97,8 @@ const CONFIG = [
     Github = {
         links: [
             link1 = {
-                name: "HOME",
-                url: "https://github.com/ryencook"
+                name: "REPOSITORIES",
+                url: "https://github.com/RyenCook?tab=repositories"
             },
         ],
         icontype: "fab",
